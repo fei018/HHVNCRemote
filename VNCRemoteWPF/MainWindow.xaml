@@ -1,0 +1,79 @@
+﻿<Window x:Class="VNCRemoteWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VNCRemoteWPF"
+        mc:Ignorable="d"
+        Title="RemoteSupport 1.0" Height="400" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="logo2.png" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25px"/>
+            <RowDefinition Height="110px"/>
+            <RowDefinition Height="150px"/>
+            <RowDefinition Height="40px"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Menu -->
+        <Grid Grid.Row="0">
+            <Menu>
+                <!--<MenuItem FontSize="16" Header="uvnc服務">
+                    <MenuItem Name="menuInstallUvncService" Header="安裝" FontSize="16" Click="menuInstallUvncService_Click"></MenuItem>
+                    <MenuItem Name="menuUninstallUvncService" Header="解除安裝" FontSize="16" Click="menuUninstallUvncService_Click"></MenuItem>
+                </MenuItem>-->
+                <MenuItem FontSize="16" Header="系統命令">
+                    <MenuItem Name="menuReboot" Header="重啟系統" FontSize="16" Click="menuReboot_Click"></MenuItem>
+                    <MenuItem Name="menuLogOff" Header="登出" FontSize="16" Click="menuLogOff_Click"></MenuItem>
+                    <MenuItem Name="menuLockComputer" Header="鎖定" FontSize="16" Click="menuLockComputer_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <!-- / Menu -->
+        
+        <!-- logo -->
+        <Grid Grid.Row="1">
+            <Image Source="logo.jpg" Width="280px"></Image>
+        </Grid>
+        <!-- / logo -->
+        
+        <!-- detail -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110px"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Canvas>
+                <TextBlock FontSize="14" Text="電腦名稱:" Canvas.Left="40" Canvas.Top="25"></TextBlock>
+                <TextBlock FontSize="16" Text="IP:" Canvas.Left="81" Canvas.Top="65"></TextBlock>
+                <TextBlock FontSize="16" Text="密碼:" Canvas.Left="63" Canvas.Top="105"></TextBlock>
+            </Canvas>
+            <Canvas Grid.Column="1">
+                <TextBlock x:Name="txtBlockHostName" FontSize="16" Text="" Canvas.Left="10" Canvas.Top="24"></TextBlock>
+                <TextBlock x:Name="txtBlockHostIP" FontSize="16" Text="" Canvas.Left="10" Canvas.Top="65"></TextBlock>
+                <TextBlock x:Name="txtBlockVNCPasswd" FontSize="16" Text="" Canvas.Left="10" Canvas.Top="105"></TextBlock>
+            </Canvas>
+        </Grid>
+        <!-- / detail -->
+        
+        <!-- progress bar -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ProgressBar x:Name="progressBar1" IsIndeterminate="True" Height="20px" Width="80px" Visibility="Hidden"/>
+            <Button Grid.Column="1" Name="btnCloseApp" Height="25px" Width="70px" FontSize="16" Click="btnCloseApp_Click">關閉</Button>
+        </Grid>
+        <!-- / progress bar -->
+        
+        <!-- Status Bar-->
+        <Grid Grid.Row="4">
+            <StatusBar>
+                <TextBlock Text="  狀態: " FontSize="12"/>
+                <TextBlock x:Name="txtBlockStatus" FontSize="12"/>
+            </StatusBar>
+        </Grid>
+        <!-- / Status Bar-->
+    </Grid>
+</Window>
