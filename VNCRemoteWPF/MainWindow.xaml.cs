@@ -29,7 +29,7 @@ namespace VNCRemoteWPF
                 txtBlockHostName.Text = UVncOption.HostName;
                 txtBlockHostIP.Text = UVncOption.HostIP;
 
-                _UVncHelper1 = new UVncHelper();
+                _UVncHelper1 = new UVncHelper(UVncOption.GetUVncInstance());
 
                 // 訂閱事件
                 SubscribeUVncHelperEvent();
@@ -88,19 +88,17 @@ namespace VNCRemoteWPF
             var vnc = (UVncHelper)sender;
             if (vnc.IsShowProgressBar)
             {
-                this.Dispatcher.Invoke(() =>
-                {
+                this.Dispatcher.Invoke(new Action(() => {
                     this.IsEnabled = false;
                     progressBar1.Visibility = Visibility.Visible;
-                });
+                }));
             }
             else
             {
-                this.Dispatcher.Invoke(() =>
-                {
+                this.Dispatcher.Invoke(new Action(()=> {
                     this.IsEnabled = true;
                     progressBar1.Visibility = Visibility.Hidden;
-                });
+                }));
             }
             return true;
         }
@@ -109,14 +107,14 @@ namespace VNCRemoteWPF
         #region ValidateAccountOrOpenInputAccountBoxEvent
         private bool _UVncHelper1_ValidateAccountOrOpenInputAccountBoxEvent(object sender, UVncOption option)
         {
-            return this.Dispatcher.Invoke(() =>
+            return (bool)this.Dispatcher.Invoke(new Func<bool>(() =>
             {
                 InputAccountWindow inputAccountWindow = new InputAccountWindow();
                 inputAccountWindow.Owner = this;
                 inputAccountWindow.ShowDialog();
                 var input = UVncOption.ValidateInputAccount();
                 return input;
-            });
+            }));
         }
         #endregion
 

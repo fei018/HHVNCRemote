@@ -9,8 +9,8 @@ namespace VNCRemoteWPF
     /// </summary>
     public partial class App : Application
     {
-        //[System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        //[System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
+        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         [System.STAThreadAttribute()]
         public static void Main()
         {
@@ -20,7 +20,7 @@ namespace VNCRemoteWPF
         #region AppMutex
         private static void AppMutex()
         {
-            System.Threading.Mutex mutex = new System.Threading.Mutex(true, "RemoteSupportApp", out bool flag);
+            System.Threading.Mutex mutex = new System.Threading.Mutex(true, "RemoteSupport123456", out bool flag);
             //第一个参数:true--给调用线程赋予互斥体的初始所属权  
             //第一个参数:互斥体的名称  
             //第三个参数:返回值,如果调用线程已被授予互斥体的初始所属权,则返回true  

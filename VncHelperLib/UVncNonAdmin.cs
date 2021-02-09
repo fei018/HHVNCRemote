@@ -15,6 +15,15 @@ namespace VncHelperLib
         }
 
         #region InstallStartVncServiceWait
+        /// <summary>
+        /// 安裝 uvnc_service 服務 <br/>
+        /// 權限不夠時: <br/>
+        /// 1. 從當前user temp文件夾下讀取文件 <br/>
+        /// 2. 檢查 UVncOption.AdminUser 和 UVncOption.AdminPasswd <br/>
+        /// 3. 驗證不通過 則 彈出 賬戶密碼 輸入框
+        /// </summary>
+        /// <param name="waitSecond">等待秒數</param>
+        /// <returns></returns>
         public bool InstallVncServiceWait_Authorize(int waitSecond)
         {
             if (VncServiceExist())
@@ -51,6 +60,15 @@ namespace VncHelperLib
         #endregion
 
         #region UninstallVncServiceWait
+        /// <summary>
+        /// 刪除 uvnc_service 服務 <br/>
+        /// 權限不夠時: <br/>
+        /// 1. 從當前user temp文件夾下讀取文件 <br/>
+        /// 2. 檢查 UVncOption.AdminUser 和 UVncOption.AdminPasswd <br/>
+        /// 3. 驗證不通過 則 彈出 賬戶密碼 輸入框
+        /// </summary>
+        /// <param name="waitSecond">等待秒數</param>
+        /// <returns></returns>
         public bool UninstallVncServiceWait_Authorize(int waitSecond)
         {
             if (!VncServiceExist())
@@ -78,6 +96,10 @@ namespace VncHelperLib
         #endregion
 
         #region RestartVncService
+        /// <summary>
+        /// 重新啟動 uvnc_service 服務
+        /// </summary>
+        /// <returns></returns>
         public bool RestartVncService_Authorize()
         {
             var st = StopVncService_Authorize();
@@ -91,6 +113,14 @@ namespace VncHelperLib
         #endregion
 
         #region StartVncService
+        /// <summary>
+        /// 啟動 uvnc_service 服務, 服務不存在 則跳過返回false <br/>
+        /// 權限不夠時: <br/>
+        /// 1. 從當前user temp文件夾下讀取文件 <br/>
+        /// 2. 檢查 UVncOption.AdminUser 和 UVncOption.AdminPasswd <br/>
+        /// 3. 驗證不通過 則 彈出 賬戶密碼 輸入框
+        /// </summary>
+        /// <returns></returns>
         public bool StartVncService_Authorize()
         {
             if (!VncServiceExist())
@@ -123,6 +153,14 @@ namespace VncHelperLib
         #endregion
 
         #region StopVncService
+        /// <summary>
+        /// 停止 uvnc_service 服務, 服務不存在 則跳過 返回 false <br/>
+        /// 權限不夠時: <br/>
+        /// 1. 從當前user temp文件夾下讀取文件 <br/>
+        /// 2. 檢查 UVncOption.AdminUser 和 UVncOption.AdminPasswd <br/>
+        /// 3. 驗證不通過 則 彈出 賬戶密碼 輸入框
+        /// </summary>
+        /// <returns></returns>
         public bool StopVncService_Authorize()
         {
             if (!VncServiceExist())
@@ -153,7 +191,6 @@ namespace VncHelperLib
             return false;
         }
         #endregion       
-
         
     }
 }

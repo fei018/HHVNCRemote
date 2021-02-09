@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace VncHelperLib
 {
@@ -13,20 +14,14 @@ namespace VncHelperLib
 
         public event UVncEventHandler ValidateAccountOrOpenInputAccountBoxEvent;
 
+
         #region 構造函數
         /// <summary>
         /// check ultravnc path, throw excetion
         /// </summary>
-        public UVncHelper()
+        public UVncHelper(IUVnc uvnc)
         {
-            try
-            {
-                _uvnc = UVncOption.GetUVncInstance();              
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            _uvnc = uvnc;
         }
         #endregion
 
@@ -50,7 +45,7 @@ namespace VncHelperLib
             set
             {
                 _uvncStatus = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged("UVncStatusNotity");
             }
         }
 
@@ -69,7 +64,7 @@ namespace VncHelperLib
             set
             {
                 _uvncPassword = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged("UVncPasswordNotity");
             }
         }
         #endregion
@@ -142,7 +137,8 @@ namespace VncHelperLib
             {
                 if (serviceExist)
                 {
-                    SetUVncStatusNotity("非管理員, uvnc服務已存在, 密碼無效.");
+                    UVncPasswordNotity = _uvnc.TryGetVncPasswordFromUltravncIni();
+                    SetUVncStatusNotity("非管理員, uvnc服務已存在, 密碼可能無效.");
                     return;
                 }
                 else
@@ -239,21 +235,26 @@ namespace VncHelperLib
         /// </summary>
         public void ToCloseRemoteSupport()
         {
-            if (_isLogOff || _isReboot)
-            {
-                return;
-            }
-
-            SetUVncStatusNotity("關閉中...");
             try
             {
+                if (_isLogOff || _isReboot)
+                {
+                    return;
+                }
+
+                SetUVncStatusNotity("關閉中...");
+
                 if (_uvnc.VncServiceExist())
                 {
                     SetUVncStatusNotity("刪除服務中...");
                     _uvnc.UninstallVncServiceWait_Authorize(_waitTimeSecond);
-                    return;
+                    UVncOption.DeleteUserTempFile();
                 }
+
                 _uvnc.KillWinVncProcessWait(_waitTimeSecond);
+
+                SetUVncStatusNotity("刪除臨時文件.");
+                UVncOption.DeleteUserTempFile();
                 return;
             }
             catch (Exception ex)
@@ -281,7 +282,7 @@ namespace VncHelperLib
                 else
                 {
                     SetUVncStatusNotity("uvnc服務安裝失敗.");
-                }                            
+                }
             }
             catch (Exception ex)
             {
@@ -338,7 +339,7 @@ namespace VncHelperLib
                 else
                 {
                     SetUVncStatusNotity("uvnc服務安裝失敗.");
-                }                
+                }
             }
             catch (Exception ex)
             {
