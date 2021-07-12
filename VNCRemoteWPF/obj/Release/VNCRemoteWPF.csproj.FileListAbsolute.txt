@@ -1,0 +1,96 @@
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\bin\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\bin\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csprojAssemblyReference.cache
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\App.g.cs
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\InputAccountWindow.g.cs
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\MainWindow.g.cs
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\App.baml
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\InputAccountWindow.baml
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\MainWindow.baml
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\RemoteSupport.g.resources
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CopyComplete
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote\VNCRemoteWPF\obj\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\bin\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\bin\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csprojAssemblyReference.cache
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\App.g.cs
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\InputAccountWindow.g.cs
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\MainWindow.g.cs
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\App.baml
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\InputAccountWindow.baml
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\MainWindow.baml
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\RemoteSupport.g.resources
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CopyComplete
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - .net 4.0\VNCRemoteWPF\obj\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\bin\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\bin\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csprojAssemblyReference.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\App.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\InputAccountWindow.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\MainWindow.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\App.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\InputAccountWindow.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\MainWindow.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\RemoteSupport.g.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CopyComplete
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - embed winvnc\VNCRemoteWPF\obj\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\bin\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\bin\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csprojAssemblyReference.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\App.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\InputAccountWindow.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\MainWindow.g.cs
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\App.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\InputAccountWindow.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\MainWindow.baml
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\RemoteSupport.g.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CopyComplete
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VNCRemoteWPF\obj\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\bin\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\bin\Release\RemoteSupport.pdb
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\App.g.cs
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\InputAccountWindow.g.cs
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\MainWindow.g.cs
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\App.baml
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\InputAccountWindow.baml
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\MainWindow.baml
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\RemoteSupport.g.resources
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\RemoteSupport.exe
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Release\RemoteSupport.pdb

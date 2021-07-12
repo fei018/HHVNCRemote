@@ -9,14 +9,38 @@ namespace VncHelperLib
 {
     ////reference https://docs.microsoft.com/en-us/dotnet/api/system.security.principal.windowsimpersonationcontext?view=netframework-4.8
 
-    public class Win32AccountValidate
+    /// <summary>
+    /// 驗證 windows 賬戶 密碼
+    /// </summary>
+    public class WindowsAccountValidate
     {
+        #region win32 API
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
         private static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
                                             int dwLogonType, int dwLogonProvider, out SafeTokenHandle phToken);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
         private extern static bool CloseHandle(IntPtr handle);
+
+        private sealed class SafeTokenHandle : SafeHandleZeroOrMinusOneIsInvalid
+        {
+            private SafeTokenHandle()
+                : base(true)
+            {
+            }
+
+            [DllImport("kernel32.dll")]
+            [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
+            [SuppressUnmanagedCodeSecurity]
+            [return: MarshalAs(UnmanagedType.Bool)]
+            private static extern bool CloseHandle(IntPtr handle);
+
+            protected override bool ReleaseHandle()
+            {
+                return CloseHandle(handle);
+            }
+        }
+        #endregion
 
         public static bool Validate(string domainName, string userName, string passwd)
         {
@@ -48,25 +72,4 @@ namespace VncHelperLib
             }
         }
     }
-
-    #region SafeTokenHandle Class
-    public sealed class SafeTokenHandle : SafeHandleZeroOrMinusOneIsInvalid
-    {
-        private SafeTokenHandle()
-            : base(true)
-        {
-        }
-
-        [DllImport("kernel32.dll")]
-        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
-        [SuppressUnmanagedCodeSecurity]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool CloseHandle(IntPtr handle);
-
-        protected override bool ReleaseHandle()
-        {
-            return CloseHandle(handle);
-        }
-    }
-    #endregion
 }

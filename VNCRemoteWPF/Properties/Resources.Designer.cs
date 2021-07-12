@@ -59,5 +59,53 @@ namespace VNCRemoteWPF.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查詢類似 [Permissions]
+        ///[admin]
+        ///FileTransferEnabled=1
+        ///FTUserImpersonation=1
+        ///BlankMonitorEnabled=1
+        ///BlankInputsOnly=0
+        ///DefaultScale=1
+        ///UseDSMPlugin=0
+        ///DSMPlugin=
+        ///primary=1
+        ///secondary=1
+        ///SocketConnect=1
+        ///HTTPConnect=1
+        ///AutoPortSelect=1
+        ///InputsEnabled=1
+        ///LocalInputsDisabled=0
+        ///IdleTimeout=0
+        ///EnableJapInput=0
+        ///EnableUnicodeInput=0
+        ///EnableWin8Helper=0
+        ///QuerySetting=2
+        ///QueryTimeout=10
+        ///QueryDisableTime=0
+        ///QueryAccept=0
+        ///LockSetting=0
+        ///RemoveWallpaper=0
+        ///RemoveEffects=0
+        ///RemoveFontSmoothing=0
+        ///RemoveAero=1
+        ///DebugMode=0 [字串的其餘部分已遭截斷]&quot;; 的當地語系化字串。
+        /// </summary>
+        internal static string UltraVNC {
+            get {
+                return ResourceManager.GetString("UltraVNC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Byte[] 的當地語系化資源。
+        /// </summary>
+        internal static byte[] winvnc {
+            get {
+                object obj = ResourceManager.GetObject("winvnc", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

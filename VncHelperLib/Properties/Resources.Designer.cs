@@ -71,7 +71,7 @@ namespace VncHelperLib.Properties {
         ///UseDSMPlugin=0
         ///DSMPlugin=
         ///primary=1
-        ///secondary=0
+        ///secondary=1
         ///SocketConnect=1
         ///HTTPConnect=1
         ///AutoPortSelect=1
@@ -89,7 +89,7 @@ namespace VncHelperLib.Properties {
         ///RemoveWallpaper=0
         ///RemoveEffects=0
         ///RemoveFontSmoothing=0
-        ///RemoveAero=0
+        ///RemoveAero=1
         ///DebugMode=0 [字串的其餘部分已遭截斷]&quot;; 的當地語系化字串。
         /// </summary>
         internal static string UltraVNC {

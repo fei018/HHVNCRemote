@@ -1,0 +1,37 @@
+C:\CodeRepos\HHVNCRemote - vnc\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - vnc\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - vnc\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - vnc\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - vnc\VncHelperLib\obj\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote\VncHelperLib\obj\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - .net 4.0\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - .net 4.0\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - .net 4.0\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - .net 4.0\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - .net 4.0\VncHelperLib\obj\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\obj\Release\VncHelperLib.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\obj\Release\VncHelperLib.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc\VncHelperLib\obj\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.csprojAssemblyReference.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - embed winvnc - release\VncHelperLib\obj\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\bin\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\bin\Release\VncHelperLib.pdb
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\obj\Release\VncHelperLib.Properties.Resources.resources
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\obj\Release\VncHelperLib.csproj.GenerateResource.cache
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\obj\Release\VncHelperLib.csproj.CoreCompileInputs.cache
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\obj\Release\VncHelperLib.dll
+C:\CodeRepos\HHVNCRemote - .net4.0 - release\VncHelperLib\obj\Release\VncHelperLib.pdb

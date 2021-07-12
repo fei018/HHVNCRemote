@@ -14,6 +14,16 @@ namespace VncHelperLib
         public static string UVncPassword { get; set; }
         public static bool IsAfterReboot { get; set; }
 
+        public string VncServiceName { get; set; }
+
+        public string WinVncProcessName { get; set; }
+
+        public string WinvncExe { get; set; }
+
+        public string SetpasswordExe { get; set; }
+
+        public string UltravncIni { get; set; }
+
         public static readonly string HostName = Dns.GetHostName();
 
         public static readonly string HostIP = Dns.GetHostEntry(HostName).AddressList.FirstOrDefault(p => p.AddressFamily.ToString() == "InterNetwork")?.ToString();
@@ -26,19 +36,11 @@ namespace VncHelperLib
         private static readonly string _setpasswd = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramW6432%"), @"uvnc bvba\UltraVNC\setpasswd.exe");
         private static readonly string _ultravncIni = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramW6432%"), @"uvnc bvba\UltraVNC\ultravnc.ini");
 
-        private static readonly string _winvncX86 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), @"uvnc bvba\UltraVNC\winvnc.exe");
-        private static readonly string _setpasswdX86 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), @"uvnc bvba\UltraVNC\setpasswd.exe");
-        private static readonly string _ultravncIniX86 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), @"uvnc bvba\UltraVNC\ultravnc.ini");
-
-        public string VncServiceName { get; set; }
-
-        public string WinVncProcessName { get; set; }
-
-        public string WinvncExe { get; set; }
-
-        public string SetpasswordExe { get; set; }
-
-        public string UltravncIni { get; set; }
+        private static readonly string _winvncX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\winvnc.exe");
+        private static readonly string _setpasswdX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\setpasswd.exe");
+        private static readonly string _ultravncIniX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\ultravnc.ini");
+       
+        private static string _TempFolder = Environment.ExpandEnvironmentVariables("%TEMP%");
 
         private static UVncOption InitialVncPath()
         {
@@ -72,8 +74,8 @@ namespace VncHelperLib
         /// <returns></returns>
         private static UVncOption InitialVncPathUseEmbed()
         {
-            var tempWinvnc = Path.Combine(Environment.GetEnvironmentVariable("TEMP", EnvironmentVariableTarget.User), "winvnc.exe");
-            var tempIni = Path.Combine(Environment.GetEnvironmentVariable("TEMP", EnvironmentVariableTarget.User), "ultravnc.ini");
+            var tempWinvnc = Path.Combine(_TempFolder, "winvnc.exe");
+            var tempIni = Path.Combine(_TempFolder, "ultravnc.ini");
 
             var option = new UVncOption
             {
@@ -151,14 +153,19 @@ namespace VncHelperLib
                 return false;
             }
 
-            var val = Win32AccountValidate.Validate(null, AdminUser, AdminPasswd);
+            var val = WindowsAccountValidate.Validate(null, AdminUser, AdminPasswd);
             return val;
         }
         #endregion
 
         #region static CreateStartupBatchFile 
-        private static readonly string _mainProcessExeFullPath = Process.GetCurrentProcess().MainModule.FileName;
-        private static readonly string _startupFullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "RemoteSupport.bat");
+        private static readonly string _appFullPath = Process.GetCurrentProcess().MainModule.FileName;
+         
+        private static string GetStartupPath()
+        {
+            string startupFullPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), "StartupRemoteSupport.bat");
+            return startupFullPath;
+        }
 
         /// <summary>
         /// shell:startup 裡建立 啟動 batch
@@ -168,11 +175,13 @@ namespace VncHelperLib
         {
             try
             {
-                string arg = $"start \"title\" \"{_mainProcessExeFullPath}\" -r {vncPasswd}" + " exit 0";
+                
+
+                string arg = $"start \"title\" \"{_appFullPath}\" -r {vncPasswd}" + " exit 0";
 
                 if (IsCurrentUserInAdministrators())
                 {
-                    File.WriteAllText(_startupFullPath, arg);
+                    File.WriteAllText(GetStartupPath(), arg);
                     return;
                 }
 
@@ -181,7 +190,7 @@ namespace VncHelperLib
                     CreateAndWriteAdminPasswdToUserTempFile();
                 }
 
-                File.WriteAllText(_startupFullPath, arg);
+                File.WriteAllText(GetStartupPath(), arg);
                 return;
             }
             catch (Exception)
@@ -189,38 +198,6 @@ namespace VncHelperLib
                 throw;
             }
         }
-
-        //public static void CreateStartupBatchFile(string vncPasswd)
-        //{
-        //    try
-        //    {
-        //        string arg;
-
-        //        if (IsCurrentUserInAdministrators())
-        //        {
-        //            arg = $"start \"title\" \"{_mainProcessExeFullPath}\" -r {vncPasswd}" + " exit 0";
-        //            File.WriteAllText(_startupFullPath, arg);
-        //            return;
-        //        }
-
-        //        if (ValidateInputAccount())
-        //        {
-        //            var passdes = DESEncryptHelper.Encrypt(AdminPasswd);
-        //            arg = $"start \"title\" \"{_mainProcessExeFullPath}\" -r {vncPasswd} -u {AdminUser} {passdes}" + " exit 0";
-        //        }
-        //        else
-        //        {
-        //            arg = $"start \"title\" \"{_mainProcessExeFullPath}\" -r {vncPasswd}" + " exit 0";
-        //        }
-
-        //        File.WriteAllText(_startupFullPath, arg);
-        //        return;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
         #endregion
 
         #region static DeleteStartupBatchFile
@@ -231,9 +208,9 @@ namespace VncHelperLib
         {
             try
             {
-                if (File.Exists(_startupFullPath))
+                if (File.Exists(GetStartupPath()))
                 {
-                    File.Delete(_startupFullPath);
+                    File.Delete(GetStartupPath());
                 }
             }
             catch (Exception)
@@ -250,7 +227,7 @@ namespace VncHelperLib
         public static void ToLauchRemoteSupportGetArguments(string[] args)
         {
             IsAfterReboot = false;
-            if (args.Length <= 0)
+            if (args == null || args.Length <= 0)
             {
                 return;
             }
@@ -279,7 +256,7 @@ namespace VncHelperLib
         /// <returns></returns>
         private static string GetUserTempFile()
         {
-            var temp = Environment.GetEnvironmentVariable("TEMP", EnvironmentVariableTarget.User);
+            var temp = _TempFolder;
             if (string.IsNullOrWhiteSpace(temp))
             {
                 return null;

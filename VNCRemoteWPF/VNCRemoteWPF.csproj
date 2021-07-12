@@ -36,7 +36,7 @@
     </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -47,7 +47,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -61,6 +61,12 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,6 +86,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VncHelperLib\IUVnc.cs" />
+    <Compile Include="VncHelperLib\Tools\CMDHelper.cs" />
+    <Compile Include="VncHelperLib\Tools\DESEncryptHelper.cs" />
+    <Compile Include="VncHelperLib\Tools\NotifyPropertyObject.cs" />
+    <Compile Include="VncHelperLib\Tools\OSPowerHelper.cs" />
+    <Compile Include="VncHelperLib\Tools\TaskExtension.cs" />
+    <Compile Include="VncHelperLib\Tools\WindowsAccountValidate.cs" />
+    <Compile Include="VncHelperLib\UVncAsAdmin.cs" />
+    <Compile Include="VncHelperLib\UVncBase.cs" />
+    <Compile Include="VncHelperLib\UVncEventHandler.cs" />
+    <Compile Include="VncHelperLib\UVncHelper.cs" />
+    <Compile Include="VncHelperLib\UVncNonAdmin.cs" />
+    <Compile Include="VncHelperLib\UVncOption.cs" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,6 +146,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\UltraVNC.ini" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo.jpg" />
@@ -136,12 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="logo2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VncHelperLib\VncHelperLib.csproj">
-      <Project>{dc0ac1f6-93e2-496c-90c5-7dbabc5915d2}</Project>
-      <Name>VncHelperLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -154,6 +168,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winvnc.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

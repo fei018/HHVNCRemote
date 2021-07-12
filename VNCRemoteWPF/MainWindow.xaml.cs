@@ -17,6 +17,9 @@ namespace VNCRemoteWPF
             InitializeComponent();
 
             VNCHelpInitial();
+
+            // 保持主線程 阻止鎖屏
+            OSPowerHelper.PreventForCurrentThread();
         }
 
         UVncHelper _UVncHelper1;
@@ -72,7 +75,7 @@ namespace VNCRemoteWPF
         }
         #endregion
 
-        #region LaunchRemoteSupport
+        #region Launch RemoteSupport
         private void LaunchRemoteSupport()
         {
             Task.Factory.StartNew(() =>
@@ -217,6 +220,9 @@ namespace VNCRemoteWPF
         {
             this.Visibility = Visibility.Hidden;
             _UVncHelper1.ToCloseRemoteSupport();
+
+            // 恢復正常 鎖屏睡眠狀態
+            OSPowerHelper.RestoreForCurrentThread();
         }
         #endregion
 

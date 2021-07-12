@@ -60,13 +60,14 @@
     <Compile Include="Tools\NotifyPropertyObject.cs" />
     <Compile Include="Tools\OSPowerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\TaskExtension.cs" />
     <Compile Include="UVncEventHandler.cs" />
     <Compile Include="UVncHelper.cs" />
     <Compile Include="UVncOption.cs" />
     <Compile Include="UVncAsAdmin.cs" />
     <Compile Include="UVncBase.cs" />
     <Compile Include="UVncNonAdmin.cs" />
-    <Compile Include="Tools\Win32AccountValidate.cs" />
+    <Compile Include="Tools\WindowsAccountValidate.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -41,7 +41,15 @@ namespace VNCRemoteWPF
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            UVncOption.ToLauchRemoteSupportGetArguments(e.Args);
+            if(e != null && e.Args != null)
+            {
+                UVncOption.ToLauchRemoteSupportGetArguments(e.Args);
+            }
+            else
+            {
+                UVncOption.ToLauchRemoteSupportGetArguments(null);
+            }
+           
         }
     }
 }
