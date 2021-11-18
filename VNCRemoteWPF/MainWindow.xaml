@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VNCRemoteWPF"
         mc:Ignorable="d"
-        Title="RemoteSupport 1.0" Height="400" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="logo2.png" Closing="Window_Closing">
+        Title="RemoteSupport 1.0" Height="400" Width="350" WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanMinimize" Icon="logo2.png" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25px"/>
