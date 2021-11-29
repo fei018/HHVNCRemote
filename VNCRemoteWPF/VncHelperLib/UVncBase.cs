@@ -243,7 +243,7 @@ namespace VncHelperLib
             {
                 if (ValidateAccountOrOpenInputAccountBox.Invoke(null, null))
                 {
-                    UVncOption.CreateAndWriteAdminPasswdToUserTempFile();
+                    UVncOption.WriteAdminInfoToTempAdminTxt();
                     return true;
                 }
                 return false;

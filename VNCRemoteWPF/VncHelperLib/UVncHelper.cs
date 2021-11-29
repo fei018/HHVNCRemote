@@ -247,13 +247,13 @@ namespace VncHelperLib
                 {
                     SetUVncStatusNotity("刪除服務中...");
                     _uvnc.UninstallVncServiceWait_Authorize(_waitTimeSecond);
-                    UVncOption.DeleteUserTempFile();
+                    UVncOption.DeleteTempAdminTxt();
                 }
 
                 _uvnc.KillWinVncProcessWait(_waitTimeSecond);
 
                 SetUVncStatusNotity("刪除臨時文件.");
-                UVncOption.DeleteUserTempFile();
+                UVncOption.DeleteTempAdminTxt();
                 return;
             }
             catch (Exception ex)

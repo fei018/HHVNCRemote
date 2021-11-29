@@ -99,3 +99,19 @@ C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Debug\VNCRemoteWPF
 C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Debug\VNCRemoteWPF.csproj.CopyComplete
 C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Debug\RemoteSupport.exe
 C:\CodeRepos\HHVNCRemote - .net4.0 - release\VNCRemoteWPF\obj\Debug\RemoteSupport.pdb
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\bin\Debug\RemoteSupport.exe
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\bin\Debug\RemoteSupport.pdb
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\App.g.cs
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\InputAccountWindow.g.cs
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\MainWindow.g.cs
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\RemoteSupport_MarkupCompile.cache
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\RemoteSupport_MarkupCompile.lref
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\App.baml
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\InputAccountWindow.baml
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\MainWindow.baml
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\RemoteSupport.g.resources
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\VNCRemoteWPF.Properties.Resources.resources
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\VNCRemoteWPF.csproj.GenerateResource.cache
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\VNCRemoteWPF.csproj.CoreCompileInputs.cache
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\RemoteSupport.exe
+C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\RemoteSupport.pdb

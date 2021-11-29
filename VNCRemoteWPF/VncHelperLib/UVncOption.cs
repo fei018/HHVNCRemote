@@ -28,43 +28,19 @@ namespace VncHelperLib
 
         public static readonly string HostIP = Dns.GetHostEntry(HostName).AddressList.FirstOrDefault(p => p.AddressFamily.ToString() == "InterNetwork")?.ToString();
 
-        #region static InitialVncPath
         private static readonly string _vncServiceName = "uvnc_service";
         private static readonly string _vncProcessName = "winvnc";
 
-        private static readonly string _winvnc = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramW6432%"), @"uvnc bvba\UltraVNC\winvnc.exe");
-        private static readonly string _setpasswd = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramW6432%"), @"uvnc bvba\UltraVNC\setpasswd.exe");
-        private static readonly string _ultravncIni = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramW6432%"), @"uvnc bvba\UltraVNC\ultravnc.ini");
+        // e.g. C:\programdata\uvnc
+        private static string _UVncTempFolder = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramData%"), "UVnc");
 
-        private static readonly string _winvncX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\winvnc.exe");
-        private static readonly string _setpasswdX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\setpasswd.exe");
-        private static readonly string _ultravncIniX86 = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramFiles(x86)%"), @"uvnc bvba\UltraVNC\ultravnc.ini");
-       
-        private static string _TempFolder = Path.Combine(Environment.ExpandEnvironmentVariables("%ProgramData%"),"vnc");
-
+        #region static InitialVncPath
         private static UVncOption InitialVncPath()
         {
-            var option = new UVncOption();
-            if (File.Exists(_winvnc) && File.Exists(_setpasswd) && File.Exists(_ultravncIni))
+            if (!Directory.Exists(_UVncTempFolder))
             {
-                option.WinvncExe = _winvnc;
-                option.SetpasswordExe = _setpasswd;
-                option.UltravncIni = _ultravncIni;
-                option.VncServiceName = _vncServiceName;
-                option.WinVncProcessName = _vncProcessName;
-                return option;
+                Directory.CreateDirectory(_UVncTempFolder);
             }
-
-            if (File.Exists(_winvncX86) && File.Exists(_setpasswdX86) && File.Exists(_ultravncIniX86))
-            {
-                option.WinvncExe = _winvncX86;
-                option.SetpasswordExe = _setpasswdX86;
-                option.UltravncIni = _ultravncIniX86;
-                option.VncServiceName = _vncServiceName;
-                option.WinVncProcessName = _vncProcessName;
-                return option;
-            }
-
             return InitialVncPathUseEmbed();
         }
 
@@ -74,8 +50,8 @@ namespace VncHelperLib
         /// <returns></returns>
         private static UVncOption InitialVncPathUseEmbed()
         {
-            var tempWinvnc = Path.Combine(_TempFolder, "winvnc.exe");
-            var tempIni = Path.Combine(_TempFolder, "ultravnc.ini");
+            var tempWinvnc = Path.Combine(_UVncTempFolder, "winvnc.exe");
+            var tempIni = Path.Combine(_UVncTempFolder, "ultravnc.ini");
 
             var option = new UVncOption
             {
@@ -90,6 +66,7 @@ namespace VncHelperLib
                 return option;
             }
 
+            // 嵌入資源寫到 _TempUVncFolder
             File.WriteAllBytes(tempWinvnc,VNCRemoteWPF.Properties.Resources.winvnc);
             File.WriteAllText(tempIni, VNCRemoteWPF.Properties.Resources.UltraVNC);          
 
@@ -185,7 +162,7 @@ namespace VncHelperLib
 
                 if (ValidateInputAccount())
                 {
-                    CreateAndWriteAdminPasswdToUserTempFile();
+                    WriteAdminInfoToTempAdminTxt();
                 }
 
                 File.WriteAllText(GetStartupPath(), arg);
@@ -247,28 +224,21 @@ namespace VncHelperLib
         }
         #endregion
 
-        #region static CreateAndWritePasswdToUserTempDir
-        /// <summary>
-        /// 獲取 當前用戶 temp 文件夾下的 臨時保存文件路徑
-        /// </summary>
-        /// <returns></returns>
-        private static string GetUserTempFile()
+        #region static WriteAdminInfoToTempAdminTxt
+        private static string GetUVncTempAdminTxt()
         {
-            var temp = _TempFolder;
-            if (string.IsNullOrWhiteSpace(temp))
-            {
-                return null;
-            }
 
-            return Path.Combine(temp, "remotesupport.txt");
+            return Path.Combine(_UVncTempFolder, "admin.txt");
         }
 
-
-        public static void CreateAndWriteAdminPasswdToUserTempFile()
+        /// <summary>
+        /// 系統管理員賬戶密碼 寫入臨時文件 (密碼已加密)
+        /// </summary>
+        public static void WriteAdminInfoToTempAdminTxt()
         {
             try
             {
-                var temp = GetUserTempFile();
+                var temp = GetUVncTempAdminTxt();
                 if (string.IsNullOrWhiteSpace(temp))
                 {
                     return;
@@ -293,7 +263,7 @@ namespace VncHelperLib
         {
             try
             {
-                var temp = GetUserTempFile();
+                var temp = GetUVncTempAdminTxt();
                 if (!File.Exists(temp))
                 {
                     return;
@@ -315,15 +285,15 @@ namespace VncHelperLib
         }
         #endregion
 
-        #region static DeleteUserTempFile
+        #region static DeleteTempAdminTxt
         /// <summary>
-        /// 刪除 當前用戶 temp 文件夾下的 保存管理員賬戶密碼的臨時文件
+        /// 刪除 管理員賬戶密碼的臨時文件
         /// </summary>
-        public static void DeleteUserTempFile()
+        public static void DeleteTempAdminTxt()
         {
             try
             {
-                var temp = GetUserTempFile();
+                var temp = GetUVncTempAdminTxt();
                 if (File.Exists(temp))
                 {
                     File.Delete(temp);
