@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\CodeRepos\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\
+C:\Code\GitHub\HHVNCRemote\VNCRemoteWPF\obj\Debug\
 VNCRemoteWPF
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 31748157416
 
-191276449921
+20660868753
 14657542927
 App.xaml;InputAccountWindow.xaml;MainWindow.xaml;
 
-False
+True
 
